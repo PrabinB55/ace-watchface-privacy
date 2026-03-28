@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — 1 Watch Face</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Josefin+Sans:wght@100;300;400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --black: #0a0a0a;
+      --white: #f5f2ed;
+      --gold: #c9a84c;
+      --gold-dim: #8a6f30;
+      --grey: #3a3a3a;
+      --line: rgba(201, 168, 76, 0.2);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--black);
+      color: var(--white);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 18px;
+      line-height: 1.8;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Background texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(201,168,76,0.02) 60px, rgba(201,168,76,0.02) 61px),
+        repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(201,168,76,0.02) 60px, rgba(201,168,76,0.02) 61px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 80px 40px 120px;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 80px;
+      animation: fadeUp 1s ease both;
+    }
+
+    .app-badge {
+      display: inline-block;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 300;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold-dim);
+      padding: 6px 18px;
+      margin-bottom: 36px;
+    }
+
+    .watch-icon {
+      display: block;
+      margin: 0 auto 28px;
+      width: 48px;
+      height: 48px;
+      opacity: 0.6;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      letter-spacing: 0.05em;
+      line-height: 1.2;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    .subtitle {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 100;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+    }
+
+    /* Divider */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 48px 0;
+    }
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+    .divider-diamond {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    /* Effective date */
+    .effective-date {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 56px;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    section:nth-child(2) { animation-delay: 0.1s; }
+    section:nth-child(3) { animation-delay: 0.15s; }
+    section:nth-child(4) { animation-delay: 0.2s; }
+    section:nth-child(5) { animation-delay: 0.25s; }
+    section:nth-child(6) { animation-delay: 0.3s; }
+    section:nth-child(7) { animation-delay: 0.35s; }
+
+    h2 {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    p {
+      font-weight: 300;
+      color: rgba(245, 242, 237, 0.85);
+      margin-bottom: 16px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    /* Highlight box */
+    .highlight {
+      border-left: 2px solid var(--gold);
+      padding: 20px 28px;
+      background: rgba(201, 168, 76, 0.04);
+      margin: 32px 0;
+      font-style: italic;
+      font-size: 1.05em;
+      color: rgba(245, 242, 237, 0.9);
+    }
+
+    /* Contact */
+    a {
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid var(--gold-dim);
+      transition: border-color 0.2s;
+    }
+    a:hover { border-color: var(--gold); }
+
+    /* Footer */
+    footer {
+      margin-top: 100px;
+      text-align: center;
+      padding-top: 40px;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-app {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      color: rgba(245,242,237,0.15);
+    }
+
+    .footer-note {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 100;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-top: 16px;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 60px 24px 80px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <!-- Minimal watch SVG icon -->
+      <svg class="watch-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="24" cy="24" r="14" stroke="#c9a84c" stroke-width="1"/>
+        <circle cx="24" cy="24" r="10" stroke="#c9a84c" stroke-width="0.5" stroke-dasharray="2 2"/>
+        <line x1="24" y1="24" x2="24" y2="16" stroke="#c9a84c" stroke-width="1" stroke-linecap="round"/>
+        <line x1="24" y1="24" x2="29" y2="27" stroke="#c9a84c" stroke-width="0.8" stroke-linecap="round"/>
+        <rect x="19" y="4" width="10" height="4" rx="1" stroke="#c9a84c" stroke-width="0.8"/>
+        <rect x="19" y="40" width="10" height="4" rx="1" stroke="#c9a84c" stroke-width="0.8"/>
+      </svg>
+      <div class="app-badge">Wear OS Watch Face</div>
+      <h1>Privacy Policy</h1>
+      <div class="subtitle">1 &nbsp;·&nbsp; Watch Face Application</div>
+    </header>
+
+    <p class="effective-date">Effective Date: March 28, 2026</p>
+
+    <div class="divider"><div class="divider-diamond"></div></div>
+
+    <div class="highlight">
+      <strong>Summary:</strong> The <em>1</em> watch face does not collect, store, or share any personal data. It simply displays the time and date on your Wear OS device.
+    </div>
+
+    <section>
+      <h2>01 &nbsp; Introduction</h2>
+      <p>
+        This Privacy Policy describes how the <em>1</em> watch face application ("the App") handles information on your Wear OS device. We are committed to being transparent about how the App operates.
+      </p>
+      <p>
+        By installing and using the App, you acknowledge that you have read and understood this policy.
+      </p>
+    </section>
+
+    <section>
+      <h2>02 &nbsp; Information We Do Not Collect</h2>
+      <p>
+        The <em>1</em> watch face does not collect, transmit, or store any personal information. Specifically, the App does not access or collect:
+      </p>
+      <p>
+        — Personal identification information (name, email, address)<br/>
+        — Health or fitness data (heart rate, steps, calories)<br/>
+        — Location data (GPS or network-based)<br/>
+        — Device identifiers or advertising IDs<br/>
+        — Usage statistics or analytics<br/>
+        — Contacts, messages, or any other device content
+      </p>
+    </section>
+
+    <section>
+      <h2>03 &nbsp; How the App Works</h2>
+      <p>
+        The App functions solely as a watch face, accessing only the system time and date provided by your Wear OS device in order to display them on screen. This is standard operating system behaviour and does not constitute personal data collection.
+      </p>
+      <p>
+        All display rendering occurs entirely on your device. No data is sent to external servers, third parties, or the developer.
+      </p>
+    </section>
+
+    <section>
+      <h2>04 &nbsp; Third-Party Services</h2>
+      <p>
+        The App does not integrate any third-party SDKs, analytics platforms, advertising networks, or external services. No data is shared with any third party for any purpose.
+      </p>
+    </section>
+
+    <section>
+      <h2>05 &nbsp; Children's Privacy</h2>
+      <p>
+        The App does not knowingly collect any information from anyone, including children under the age of 13. As no data is collected at all, the App is safe for use by all ages.
+      </p>
+    </section>
+
+    <section>
+      <h2>06 &nbsp; Changes to This Policy</h2>
+      <p>
+        If this Privacy Policy changes in the future — for example, if new features are added that affect data handling — this page will be updated with a new effective date. We encourage you to review this page periodically.
+      </p>
+    </section>
+
+    <section>
+      <h2>07 &nbsp; Contact</h2>
+      <p>
+        If you have any questions or concerns about this Privacy Policy or the App, you are welcome to reach out:
+      </p>
+      <p>
+        Email: <a href="mailto:prabinsemail5@gmail.com">prabinsemail5@gmail.com</a>
+      </p>
+    </section>
+
+    <div class="divider"><div class="divider-diamond"></div></div>
+
+    <footer>
+      <div class="footer-app">1</div>
+      <d
